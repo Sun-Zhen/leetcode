@@ -8,7 +8,7 @@
 
 
 class Solution(object):
-    def lengthOfLongestSubstring(self, s):
+    def lengthOfLongestSubstring1(self, s):
         """
         :type s: str
         :rtype: int
@@ -22,6 +22,18 @@ class Solution(object):
                 max_length = max(max_length, i - start + 1)
             pos_dict[v] = i
         return max_length
+
+    def lengthOfLongestSubstring(self, s):
+        ans, start, end = 0, 0, 0
+        countDict = {}
+        for c in s:
+            end += 1
+            countDict[c] = countDict.get(c, 0) + 1
+            while countDict[c] > 1:
+                countDict[s[start]] -= 1
+                start += 1
+            ans = max(ans, end - start)
+        return ans
 
 
 if __name__ == "__main__":
