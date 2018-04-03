@@ -15,15 +15,18 @@ class Solution(object):
         """
         start = max_length = 0
         pos_dict = dict()
-        for i in range(len(s)):
-            if s[i] in pos_dict and start <= pos_dict[s[i]]:
-                start = pos_dict[s[i]] + 1
+        for i, v in enumerate(s):
+            if v in pos_dict and start <= pos_dict[v]:
+                start = pos_dict[v] + 1
             else:
                 max_length = max(max_length, i - start + 1)
-            pos_dict[s[i]] = i
+            pos_dict[v] = i
         return max_length
 
 
 if __name__ == "__main__":
     s = Solution()
+    print s.lengthOfLongestSubstring("abcabcbb")
+    print s.lengthOfLongestSubstring("bbbbb")
+    print s.lengthOfLongestSubstring("pwwkew")
     print s.lengthOfLongestSubstring("tmmzuxt")
