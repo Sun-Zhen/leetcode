@@ -19,7 +19,7 @@ class Solution(object):
         for tmp in range(len(str_x)):
             str_res += str_x[len(str_x) - 1 - tmp]
         int_res = int(str_res)
-        print int_res
+
         if is_negative and -1 * int_res > -1 * pow(2, 32):
             return -1 * int_res
         elif not is_negative and int_res < pow(2, 32) - 1:
