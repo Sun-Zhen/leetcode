@@ -21,6 +21,22 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
+        res = tmp = ListNode(0)
+        while l1 is not None or l2 is not None:
+            if l1 is None:
+                tmp.next = l2
+                break
+            if l2 is None:
+                tmp.next = l1
+                break
+            if l1.val <= l2.val:
+                tmp.next = ListNode(l1.val)
+                l1 = l1.next
+            else:
+                tmp.next = ListNode(l2.val)
+                l2 = l2.next
+            tmp = tmp.next
+        return res.next
 
 
 # 输入：1->2->4, 1->3->4
@@ -33,4 +49,7 @@ if __name__ == "__main__":
     L2.next = ListNode(3)
     L2.next.next = ListNode(4)
     s = Solution()
-    s.mergeTwoLists(L1, L2)
+    res1 = s.mergeTwoLists(L1, L2)
+    while res1 is not None:
+        print res1.val
+        res1 = res1.next
