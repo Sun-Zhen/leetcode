@@ -8,11 +8,10 @@
 
 
 class Solution(object):
-    def rob(self, nums):
+    def rob1(self, nums):
         """
         :type nums: List[int]
         :rtype: int
-        不相邻元素的子数组sum值的最大值
         """
         size = len(nums)
         dp = [0] * (size + 1)
@@ -21,6 +20,20 @@ class Solution(object):
         for i in range(2, size + 1):
             dp[i] = max(dp[i - 1], dp[i - 2] + nums[i - 1])
         return dp[size]
+
+    def rob(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        size = len(nums)
+        odd, even = 0, 0
+        for i in range(size):
+            if i % 2:
+                odd = max(odd + nums[i], even)
+            else:
+                even = max(even + nums[i], odd)
+        return max(odd, even)
 
 
 if __name__ == "__main__":
