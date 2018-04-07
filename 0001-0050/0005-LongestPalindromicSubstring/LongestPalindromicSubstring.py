@@ -14,9 +14,10 @@ class Solution(object):
         :rtype: str
         s的长度最长为1000
         """
-        dp = [[True if i == j else False for j in s] for i in s]
-        for i, vi in enumerate(s):
-            for j, vj in enumerate(s):
+        c = 0
+        max_len = 0
+        for i, v1 in enumerate(s):
+            for j in range(i):
                 pass
 
 

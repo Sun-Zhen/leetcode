@@ -23,8 +23,7 @@
 * 最小体力值
 * 每次走一步或者走两步
 * 拆分问题
-  * K<sub>n</sub>是到达第N步阶梯的最小消耗体力值
-  * K<sub>1…n</sub>的值
-
-##### 回溯
-* 
+  * K<sub>n</sub> = 
+  * K<sub>0</sub> = 1
+  * K<sub>1</sub> = min(K<sub>0</sub>,100)
+  * K<sub>3</sub> = min(K<sub>1</sub>,K<sub>0</sub>+nums[3])

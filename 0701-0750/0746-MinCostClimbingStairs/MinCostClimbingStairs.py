@@ -13,18 +13,18 @@ class Solution(object):
         :type cost: List[int]
         :rtype: int
         """
-        print self.test(cost, 0, 0)
-
-    def test(self, cost, index, sum_cost):
-        if index >= len(cost):
-            print index, sum_cost
-            return sum_cost
-        else:
-            self.test(cost, index + 2, sum_cost + cost[index])
-            self.test(cost, index + 1, sum_cost + cost[index])
+        min_cost = [None for _ in range(len(cost) + 1)]
+        min_cost[0] = cost[0]
+        min_cost[1] = cost[1]
+        for i in range(2, len(cost) + 1):
+            if i != len(cost):
+                min_cost[i] = min(min_cost[i - 2] + cost[i], min_cost[i - 1] + cost[i])
+            else:
+                min_cost[i] = min([min_cost[i - 2], min_cost[i - 1]])
+        return min(min_cost[len(cost)], min_cost[len(cost) - 1])
 
 
 if __name__ == "__main__":
     s = Solution()
     print s.minCostClimbingStairs([10, 15, 20])
-    # print s.minCostClimbingStairs([1, 100, 1, 1, 1, 100, 1, 1, 100, 1])
+    print s.minCostClimbingStairs([1, 100, 1, 1, 1, 100, 1, 1, 100, 1])
