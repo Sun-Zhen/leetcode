@@ -6,5 +6,15 @@
 @version: 1.0.0.0
 """
 
+
+class Solution(object):
+    def findRepeatedDnaSequences(self, s):
+        """
+        :type s: str
+        :rtype: List[str]
+        """
+
+
 if __name__ == "__main__":
-    pass
+    s = Solution()
+    print s.findRepeatedDnaSequences()
