@@ -8,7 +8,7 @@
 * 例如，考虑到下面的地下城，如果骑士遵循最佳路径 RIGHT-> RIGHT -> DOWN -> DOWN，则骑士的初始健康必须至少为 7。
 
 
-<table class="dungeon">
+<table style="border:3px solid black">
 <tbody><tr> 
 <td>-2 (K)</td> 
 <td>-3</td> 
