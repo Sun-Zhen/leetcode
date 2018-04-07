@@ -8,11 +8,23 @@
 * 例如，考虑到下面的地下城，如果骑士遵循最佳路径 RIGHT-> RIGHT -> DOWN -> DOWN，则骑士的初始健康必须至少为 7。
 
 
-||||
-|:-:|:-:|:-:|
-| -2(K) | -3 | 3 |
-| -5 | -10 | 1 |
-| 10 | 30 | -5(P) |
+<table class="dungeon">
+<tbody><tr> 
+<td>-2 (K)</td> 
+<td>-3</td> 
+<td>3</td> 
+</tr> 
+<tr> 
+<td>-5</td> 
+<td>-10</td> 
+<td>1</td> 
+</tr> 
+<tr> 
+<td>10</td> 
+<td>30</td> 
+<td>-5 (P)</td> 
+</tr> 
+</tbody></table>
 
 
 
