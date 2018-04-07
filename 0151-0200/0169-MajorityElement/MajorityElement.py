@@ -6,5 +6,15 @@
 @version: 1.0.0.0
 """
 
+
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+
+
 if __name__ == "__main__":
-    pass
+    s = Solution()
+    print s.majorityElement()
