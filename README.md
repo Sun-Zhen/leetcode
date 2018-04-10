@@ -3,6 +3,7 @@
 >* 参考博文资料有：
 >  * http://bookshadow.com/leetcode/
 >  * https://www.cnblogs.com/daoluanxiaozi/p/longest-palindromic-substring.html
+>  * http://www.cnblogs.com/grandyang/p/4606334.html
 >* 感谢各种神さま的博文分享
 
 ### TODO

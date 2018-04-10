@@ -31,7 +31,22 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[List[int]]
         """
-        stack = list()
+        res = list()
+        queue = list()
+        if root is not None:
+            queue.append(root)
+            while len(queue) != 0:
+                next_row = list()
+                temp_row = list()
+                for i in range(len(queue)):
+                    temp_row.append(queue[i].val)
+                    if queue[i].left is not None:
+                        next_row.append(queue[i].left)
+                    if queue[i].right is not None:
+                        next_row.append(queue[i].right)
+                res.insert(0, temp_row)
+                queue = next_row
+        return res
 
 
 if __name__ == "__main__":
