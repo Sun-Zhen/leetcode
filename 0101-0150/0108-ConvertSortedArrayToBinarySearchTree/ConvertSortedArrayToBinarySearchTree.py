@@ -21,7 +21,25 @@ class Solution(object):
         :type nums: List[int]
         :rtype: TreeNode
         """
+        return self.split(nums, 0, len(nums) - 1)
+
+    def split(self, nums, left, right):
+        """
+        
+        :param nums: 
+        :param left: 
+        :param right: 
+        :return: 
+        """
+        if left > right:
+            return None
+        mid = (left + right) / 2
+        head = TreeNode(nums[mid])
+        head.left = self.split(nums, left, mid - 1)
+        head.right = self.split(nums, mid + 1, right)
+        return head
 
 
 if __name__ == "__main__":
-    pass
+    s = Solution()
+    res = s.sortedArrayToBST([-10, -3, 0, 5, 9])
