@@ -8,7 +8,7 @@
 
 
 class Solution(object):
-    def minCostClimbingStairs(self, cost):
+    def minCostClimbingStairs1(self, cost):
         """
         :type cost: List[int]
         :rtype: int
@@ -23,8 +23,20 @@ class Solution(object):
                 min_cost[i] = min([min_cost[i - 2], min_cost[i - 1]])
         return min(min_cost[len(cost)], min_cost[len(cost) - 1])
 
+    def minCostClimbingStairs(self, cost):
+        """
+        :type cost: List[int]
+        :rtype: int
+        """
+        size = len(cost)
+        dp = [cost[0], cost[1]]
+        for x in range(2, size):
+            dp.append(min(dp[x - 1], dp[x - 2]) + cost[x])
+        return min(dp[-1], dp[-2])
+
 
 if __name__ == "__main__":
     s = Solution()
     print s.minCostClimbingStairs([10, 15, 20])
     print s.minCostClimbingStairs([1, 100, 1, 1, 1, 100, 1, 1, 100, 1])
+    print s.minCostClimbingStairs([1, 100, 3, 5, 3, 100, 1, 1, 100, 1])

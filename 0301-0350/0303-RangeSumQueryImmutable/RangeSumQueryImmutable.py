@@ -13,9 +13,14 @@ class NumArray(object):
         :type nums: List[int]
         """
         self.nums = nums
-        for i in range(len(self.nums)):
-            pass
-
+        self.dp = [[None for _ in range(len(nums))] for _ in range(len(nums))]
+        for t1 in range(len(self.nums)):
+            for t2 in range(t1, len(self.nums)):
+                if t1 == t2:
+                    self.dp[t1][t2] = nums[t2]
+                else:
+                    self.dp[t1][t2] = self.dp[t1][t2 - 1] + nums[t2]
+                    
     def sumRange(self, i, j):
         """
         :type i: int
@@ -26,8 +31,12 @@ class NumArray(object):
             i = 0
         if j >= len(self.nums):
             j = len(self.nums) - 1
-        res = sum(self.nums[i, j + 1])
-        return res
+        return self.dp[i][j]
+
+
+# Your NumArray object will be instantiated and called as such:
+# obj = NumArray(nums)
+# param_1 = obj.sumRange(i,j)
 
 
 if __name__ == "__main__":
