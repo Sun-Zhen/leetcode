@@ -13,31 +13,15 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        len_max_dict = dict()  # 比当前key大1
-        len_min_dict = dict()
-        check_list = list()
-        if nums is None or len(nums) == 0:
-            return 0
-        for i, v in enumerate(nums):
-            if v in len_max_dict:
-                len_max_dict[v] += 1
-            else:
-                len_max_dict[v] = 1
-            if v + 1 in len_max_dict:
-                len_max_dict[v + 1] += 1
-                check_list.extend([v, v + 1])
-
-            if v in len_min_dict:
-                len_min_dict[v] += 1
-            else:
-                len_min_dict[v] = 1
-            if v - 1 in len_min_dict:
-                len_min_dict[v - 1] += 1
-                check_list.extend([v, v - 1])
+        temp_dict = dict()
+        for v in nums:
+            temp_dict[v] = temp_dict.get(v, 0) + 1
         temp_max = 0
-        for _, v in enumerate(check_list):
-            temp_max = max(temp_max, len_max_dict[v])
-            temp_max = max(temp_max, len_min_dict[v])
+        for k, v in temp_dict.items():
+            if k - 1 in temp_dict:
+                temp_max = max(temp_max, v + temp_dict[k - 1])
+            if k + 1 in temp_dict:
+                temp_max = max(temp_max, v + temp_dict[k + 1])
         return temp_max
 
 
