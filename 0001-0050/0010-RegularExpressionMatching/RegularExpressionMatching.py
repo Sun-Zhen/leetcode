@@ -16,26 +16,15 @@ class Solution(object):
         '.' 匹配任意单个字符。
         '*' 匹配零个或多个前面的元素。
         """
-        start = 0
-        target = None
-        for i1, v1 in enumerate(p):
-            if v1 == ".":
-                target = s[start]
-                start += 1
-            elif v1 == "*":
-                if i1 - 1 >= 0:
-                    if p[i1 - 1] != ".":
-                        target = p[i1 - 1]
-                    while start < len(s) and s[start] == target:
-                        start += 1
+        i = j = 0
+        while i < len(s) and j < len(p):
+            if j == 0:
+                if p[0] == ".":
+                    pass
+                elif p[0] == "*":
+                    pass
                 else:
-                    continue
-            else:
-                if s[start] == v1:
-                    start += 1
-                else:
-                    return False
-        return True
+                    pass
 
 
 if __name__ == "__main__":
