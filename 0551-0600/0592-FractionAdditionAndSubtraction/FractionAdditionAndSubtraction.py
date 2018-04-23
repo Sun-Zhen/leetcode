@@ -13,7 +13,14 @@ class Solution(object):
         :type expression: str
         :rtype: str
         """
+        a = b = None
+        for i, v in enumerate(expression):
+            pass
 
 
 if __name__ == "__main__":
-    pass
+    s = Solution()
+    print s.fractionAddition("-1/2+1/2")
+    print s.fractionAddition("-1/2+1/2+1/3")
+    print s.fractionAddition("1/3-1/2")
+    print s.fractionAddition("5/3+1/3")

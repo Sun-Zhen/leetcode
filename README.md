@@ -52,3 +52,15 @@
 
 #### 范围求和问题
 * 0370,0598
+
+#### 最长子序列 Longest Common Subsequence (LCS)
+> https://blog.csdn.net/ljyljyok/article/details/77905681
+> https://blog.csdn.net/jc69186918/article/details/52851410
+
+#### 最长连续子串(连续)
+
+#### 链表翻转类
+> 单纯翻转
+> 分段翻转
+> 链表对折
+
