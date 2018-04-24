@@ -13,15 +13,19 @@ class Solution(object):
         :type height: List[int]
         :rtype: int
         """
-        start = 0
-        maxArea = 0
-        for i, v in enumerate(height):
-            if i == start:
-                continue
+        max_area = 0
+        t_left, t_right = 0, len(height) - 1
+        while t_left < t_right:
+            max_area = max(max_area, min(height[t_right], height[t_left]) * (t_right - t_left))
+            if height[t_left] < height[t_right]:
+                t_left += 1
             else:
-                pass
+                t_right -= 1
+            print t_left, t_right
+        return max_area
 
 
 if __name__ == "__main__":
     s = Solution()
-    s.maxArea([1, 2, 3, 4])
+    print s.maxArea([1, 2, 3, 4])
+    print s.maxArea([1, 1])
