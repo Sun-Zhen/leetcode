@@ -58,7 +58,7 @@
 * 双指针
   * 0011 盛最多水的容器
   * 两/三/四数之和一类(K sum problem)
-    > http://www.cnblogs.com/tenosdoit/p/3649607.html
+    - http://www.cnblogs.com/tenosdoit/p/3649607.html
     - 0001,0015,0016,0018,0167,0170,0653
   
 
