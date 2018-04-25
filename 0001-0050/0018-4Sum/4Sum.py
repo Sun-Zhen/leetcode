@@ -14,3 +14,9 @@ class Solution(object):
         :type target: int
         :rtype: List[List[int]]
         """
+        nums = sorted(nums)
+
+
+if __name__ == "__main__":
+    s = Solution()
+    print s.fourSum([1, 0, -1, 0, -2, 2], 0)
