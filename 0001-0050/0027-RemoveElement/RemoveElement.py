@@ -13,9 +13,28 @@ class Solution(object):
         :type nums: List[int]
         :type val: int
         :rtype: int
+        
         """
+        left = 0
+        right = len(nums) - 1
+        while left < right:
+            if nums[left] != val:
+                left += 1
+            elif nums[right] == val:
+                right -= 1
+            else:
+                nums[left], nums[right] = nums[right], nums[left]
+                left += 1
+                right -= 1
+        for _ in range(left, len(nums)):
+            if nums[left] == val:
+                del nums[left]
+            else:
+                left += 1
+        return len(nums)
 
 
 if __name__ == "__main__":
     s = Solution()
-    print s.removeElement()
+    print s.removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2)
+    print s.removeElement([1], 1)
