@@ -16,7 +16,6 @@ class Solution(object):
         '.' 匹配任意单个字符。
         '*' 匹配零个或多个前面的元素。
         """
-        print s, p
         if len(p) == 0:
             return len(s) == 0
         if len(p) == 1:
@@ -25,7 +24,7 @@ class Solution(object):
             if len(s) == 0:
                 return False
             return (s[0] == p[0] or p[0] == ".") and self.isMatch(s[1:], p[1:])
-        while (p[0] == s[0] or p[0] == ".") and len(s) > 0:
+        while len(s) > 0 and (p[0] == s[0] or p[0] == "."):
             if self.isMatch(s, p[2:]):
                 return True
             s = s[1:]
