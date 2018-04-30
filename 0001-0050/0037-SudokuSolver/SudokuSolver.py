@@ -12,8 +12,16 @@ class Solution(object):
         """
         :type board: List[List[str]]
         :rtype: void Do not return anything, modify board in-place instead.
+        检查每行，检查每列
         """
+
+        def dfs(i, j):
+            if i != 8 and j == 8:
+                return
+
+        dfs(0, 0)
 
 
 if __name__ == "__main__":
-    pass
+    s = Solution()
+    s.solveSudoku(None)
