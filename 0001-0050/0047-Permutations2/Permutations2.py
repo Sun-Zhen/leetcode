@@ -16,4 +16,7 @@ class Solution(object):
 
 
 if __name__ == "__main__":
-    pass
+    s = Solution()
+    r = s.permuteUnique([1, 1, 2])
+    for _, v in enumerate(r):
+        print v

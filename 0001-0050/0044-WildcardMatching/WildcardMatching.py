@@ -14,3 +14,23 @@ class Solution(object):
         :type p: str
         :rtype: bool
         """
+
+
+if __name__ == "__main__":
+    s = Solution()
+    # print s.isMatch("aa", "a")  # false
+    # print s.isMatch("aa", "*")  # true
+    # print s.isMatch("cd", "?a")  # false
+    # print s.isMatch("adceb", "*a*b")  # true
+    # print s.isMatch("acdcb", "a*c?b")  # false
+    # print s.isMatch("abefcdgiescdfimde", "ab*cd?i*de")  # true
+    # print s.isMatch("aaaa", "***a")  # true
+    # print s.isMatch("", "*")  # true
+    # print s.isMatch("c", "*?*")  # true
+    # print s.isMatch("hi", "*?")  # true
+    print s.isMatch(
+        "babbbbaabababaabbababaababaabbaabababbaaababbababaaaaaabbabaaaabababbabbababbbaaaababbbabbbbbbbbbbaabbb"
+        , "b**bb**a**bba*b**a*bbb**aba***babbb*aa****aabb*bbb***a")
+    # print s.isMatch(
+    #     "babbbbaabababaabbababaababaabbaabababbaaababbababaaaaaabbabaaaabababbabbababbbaaaababbbabbbbbbbbbbaabbb"
+    #     , "b**bb**a**bba*b**a*bbb**aba***babbb*aa****aabb*bbb***a")
